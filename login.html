@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f3">
+    <title>TamBayts | Sign In</title>
+    <link rel="icon" type="image/png" sizes="128x128" href="images/feu-roosevelt-favicon.png?v=20261103-1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/auth.css?v=20261112-2">
+  </head>
+  <body class="login-page auth-light">
+    <main class="auth-shell" id="top">
+      <section class="auth-card auth-split" id="auth-card" aria-label="Student account access">
+        <aside class="auth-panel" aria-label="Welcome">
+          <a class="auth-panel-brand" href="#top" aria-label="TamBayts home">
+            <img src="images/feu-roosevelt-logo.png?v=20261103-1" alt="">
+            <span>TamBayts</span>
+          </a>
+          <div class="auth-panel-orbit auth-panel-orbit-one" aria-hidden="true"></div>
+          <div class="auth-panel-orbit auth-panel-orbit-two" aria-hidden="true"></div>
+          <div class="auth-panel-message is-active" data-auth-message="login" aria-hidden="false">
+            <p class="auth-panel-kicker">CAMPUS FOOD</p>
+            <h2>Hello, welcome.</h2>
+            <p>Don't have an account?</p>
+            <button class="auth-panel-switch" type="button" data-auth-mode="register">Register <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="auth-panel-message" data-auth-message="register" aria-hidden="true" inert>
+            <p class="auth-panel-kicker">GOOD TO SEE YOU</p>
+            <h2>Welcome back.</h2>
+            <p>Already have an account?</p>
+            <button class="auth-panel-switch" type="button" data-auth-mode="login"><span aria-hidden="true">←</span> Sign in</button>
+          </div>
+        </aside>
+
+        <div class="auth-form-stage">
+          <section class="auth-form-view is-active" data-auth-view="login" aria-hidden="false">
+            <p class="eyebrow">CAMPUS FOOD ORDERING</p>
+            <h1>Welcome back</h1>
+            <p class="subhead">Sign in to order food or manage the campus menu.</p>
+            <p class="form-success" id="register-success" role="status" hidden>Account created successfully. Please sign in to continue.</p>
+
+            <form id="login-form" autocomplete="off">
+              <label>
+                <span>Email <span class="required-mark" aria-hidden="true">*</span></span>
+                <input name="accountEmail" type="text" inputmode="email" autocomplete="off" autocapitalize="none" spellcheck="false" data-no-autofill readonly pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Enter a valid email address." placeholder="you@gmail.com" required>
+              </label>
+              <label>
+                <span>Password <span class="required-mark" aria-hidden="true">*</span></span>
+                <div class="password-row">
+                  <input name="password" type="password" autocomplete="off" placeholder="Enter your password" required>
+                  <button type="button" class="reveal is-hidden" aria-label="Show password" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle class="eye-pupil" cx="12" cy="12" r="2.5"></circle><path class="eye-slash" d="m4 4 16 16"></path></svg>
+                  </button>
+                </div>
+              </label>
+              <p class="form-error" role="alert"></p>
+              <button class="submit-button" type="submit">Sign in <span>→</span></button>
+            </form>
+          </section>
+
+          <section class="auth-form-view" data-auth-view="register" aria-hidden="true" inert>
+            <p class="eyebrow">STUDENT ACCOUNT</p>
+            <h1>Create your account</h1>
+            <p class="subhead">Use your account to place orders and follow their status.</p>
+
+            <form id="register-form" autocomplete="off">
+              <label>
+                <span>Full name <span class="required-mark" aria-hidden="true">*</span></span>
+                <input name="name" autocomplete="off" maxlength="120" placeholder="Your name" required>
+              </label>
+              <label>
+                <span>School email <span class="required-mark" aria-hidden="true">*</span></span>
+                <input name="accountEmail" type="text" inputmode="email" autocomplete="off" autocapitalize="none" spellcheck="false" data-no-autofill readonly pattern="[^\s@]+@[^\s@]+\.[^\s@]+" title="Enter a valid email address." placeholder="you@gmail.com" required>
+              </label>
+              <label>
+                Gender <small>Optional</small>
+                <select name="gender">
+                  <option value="">Choose gender (optional)</option>
+                  <option value="Man">Man</option>
+                  <option value="Woman">Woman</option>
+                  <option value="Non-binary">Non-binary</option>
+                  <option value="Prefer not to disclose">Prefer not to disclose</option>
+                </select>
+              </label>
+              <label>
+                Department <small>Optional</small>
+                <select name="department" id="student-department">
+                  <option value="">Choose a department</option>
+                  <option value="Junior High School">Junior High School</option>
+                  <option value="Senior High School">Senior High School</option>
+                  <option value="Tertiary Education">Tertiary Education</option>
+                </select>
+              </label>
+              <label id="student-grade-field" hidden>
+                Grade level <small>Optional</small>
+                <select id="student-grade" disabled><option value="">Choose a grade</option></select>
+              </label>
+              <label id="student-program-field" hidden>
+                <span id="student-program-label">Strand</span> <small>Optional</small>
+                <select id="student-program" disabled><option value="">Choose a strand</option></select>
+              </label>
+              <input type="hidden" name="course" id="student-course">
+              <label>
+                <span>Password <span class="required-mark" aria-hidden="true">*</span></span>
+                <input name="password" type="password" autocomplete="off" minlength="8" placeholder="At least 8 characters" required>
+              </label>
+              <p class="form-error" role="alert"></p>
+              <button class="submit-button" type="submit">Create student account <span>→</span></button>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="js/auth.js?v=20261116-3"></script>
+  </body>
+</html>
+
+
+
